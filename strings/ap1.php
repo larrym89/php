@@ -5,3 +5,9 @@ echo "<pre>";
 echo strlen($sir);
 
 print_r(str_word_count($sir));
+
+$sql = "SELECT first_name , last_name FROM users WHERE first_name=$first_name";
+
+
+
+echo $sql;

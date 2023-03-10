@@ -6,7 +6,6 @@ include_once("Connection.php");
 class User
 {
 
-    public $id;
     public $first_name;
     public $last_name;
     public $email;
@@ -14,10 +13,9 @@ class User
     public $birthday;
     public $status;
 
-
-    public function __construct($id, $first_name, $last_name, $email, $password, $birthday, $status)
+    // *Constructorul Clasei
+    public function __construct($first_name, $last_name, $email, $password, $birthday, $status)
     {
-        $this->id = $id;
         $this->first_name = $first_name;
         $this->last_name = $last_name;
         $this->email = $email;
@@ -26,9 +24,10 @@ class User
         $this->status = $status;
     }
 
-    public function get_all_data($id) {
+    // *Metoda care returneaza toate datele utilizatorului
+    public static function get_allData($first_name) {
 
-        $sql = "SELECT * FROM users WHERE id = $id";
+        $sql = "SELECT * FROM users WHERE first_name = '$first_name'";
 
         $instance = Connection::getInstance();
         $conn = $instance->getConnection();
@@ -72,9 +71,158 @@ class User
 
     }
 
+    // *Metoda care returneaza prenumele si numele utilizatorului
+    public static function get_fullName($first_name) {
+
+        $sql = "SELECT first_name , last_name FROM users WHERE first_name='$first_name'";
+
+        $instance = Connection::getInstance();
+        $conn = $instance->getConnection();
+        $res = mysqli_query($conn, $sql);
+
+        while($row = mysqli_fetch_assoc($res)) {
+            return "Full name: " . $row['first_name'] . " " . $row['last_name'] . "<br>";
+        }
+
+        mysqli_close($conn);
+
+    }
+
+    //* Metoda care returneaza emailul utilizatorului
+    public static function get_email($first_name){
+
+        $sql = "SELECT email FROM users WHERE first_name = '$first_name'";
+
+        $instance = Connection::getInstance();
+        $conn = $instance->getConnection();
+        $res = mysqli_query($conn, $sql);
+
+        while($row = mysqli_fetch_assoc($res)) {
+            return "Email: " . $row['email'] ."<br>";
+        }
+
+        mysqli_close($conn);
+
+    }
+
+    // *Metoda care returneaza id-ul utlizatorului
+    public static function get_userId($first_name) {
+
+        $sql = "SELECT id FROM users WHERE first_name='$first_name'";
+
+        $instance = Connection::getInstance();
+        $conn = $instance->getConnection();
+        $res = mysqli_query($conn, $sql);
+
+        while($row = mysqli_fetch_assoc($res)) {
+            return "User ID: " . $row['id'] . "<br>";
+        }
+
+        mysqli_close($conn);
+
+    }
+
+    // *Metoda care returneaza orice date de la utilizator folosind parametrii metodei
+    public static function get_data($user, $data) {
+
+        $sql = "SELECT ". $data ." FROM users WHERE first_name = '$user'";
+        
+        $instance = Connection::getInstance();
+        $conn = $instance->getConnection();
+        $res = mysqli_query($conn, $sql);
+
+        while($row = mysqli_fetch_assoc($res)) {
+            return ucfirst($user) . "'s " . $data . ": " . $row[$data] . "<br>";
+        }
+
+        mysqli_close($conn);
+    
+
+    }
+
+    // *Metoda care returneaza o valoare booleana in functie de faptul daca utilizatorul este adult sau minor
+    public static function is_adult($first_name) {
+
+        $sql = "SELECT birthday FROM users WHERE first_name = '$first_name'";
+
+        $instance = Connection::getInstance();
+        $conn = $instance->getConnection();
+        $res = mysqli_query($conn, $sql);
+
+        while($row = mysqli_fetch_assoc($res)) {
+
+            $today = new DateTime(date("Y-m-d"));
+            $bday = new DateTime($row['birthday']);
+
+            $diff = $today->diff($bday);
+
+            if ($diff->y < 18) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        mysqli_close($conn);
+
+        
+    }
+
+    //* Metoda care adauga un utilizator  nou utilizand parametrii metodei
+    public static function add_user($first_name, $last_name, $email, $password, $birthday, $status) {
+
+        $sql = "INSERT INTO users (first_name, last_name, email, password, birthday, status)
+                 VALUES ('$first_name', '$last_name', '$email', '$password','$birthday', '$status')";
+        
+        $instance = Connection::getInstance();
+        $conn = $instance->getConnection();
+
+        if(mysqli_query($conn, $sql)){
+            echo "Datele au fost introduse cu succes!";
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+
+        mysqli_close($conn);
+
+    }
+
+    //* Metoda care editeaza un utilizator existent 
+    public function update_user($user, $data, $value) {
+
+        $sql = "UPDATE users SET " . $data . "='" . $value . "' WHERE first_name='" . $user ."'";
+
+        $instance = Connection::getInstance();
+        $conn = $instance->getConnection();
+
+        if(mysqli_query($conn, $sql)){
+            echo "Datele au fost schimbate cu succes!" . "<br>";
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+
+    }
+
+    //* Metoda care schimba starea unui utilizator existent
+    public function update_status($user, $status){
+
+        $sql = "UPDATE users SET status='". $status ."' WHERE first_name='". $user ."'";
+
+        $instance = Connection::getInstance();
+        $conn = $instance->getConnection();
+
+        if(mysqli_query($conn, $sql)){
+            echo "Statusul a fost schimbat cu succes!" . "<br>";
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+
+        mysqli_close($conn);
+
+    }
+
 }
 
-$user = new User("2","Clark", "Kent", "superman@dc.com", "loislane", "1989-08-12", "3");
 
-$data = $user->get_all_data(1);
-echo $data;
+$user = new User("Tony", "Stark", "ironman@marvel.com", "manofmetal23", "1976-05-24", "4");
+

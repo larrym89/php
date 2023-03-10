@@ -71,8 +71,7 @@ if(isset($error) && $error===true){
 }
 else {
     // salvare date
-    $sql = "INSERT INTO users (prenume, nume, email, parola, poza)
-            VALUES ('".$prenume."','".$nume."','".$email."','".$parola."','".$poza."')";
+    $sql = "INSERT INTO users (prenume, nume, email, parola, poza) VALUES ('".$prenume."','".$nume."','".$email."','".$parola."','".$poza."')";
     if(mysqli_query($con, $sql)){
         echo "Datele au fost introduse cu succes!";
         $db_eroare = false;
