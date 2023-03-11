@@ -61,13 +61,10 @@ class User
             <li>Password: " . $row['password'] . "</li>
             <li>Birthday: " . $row['birthday'] . "</li>
             <li>Status: " . $row['status'] . "</li>
-            </ul>";
-
-            
+            </ul>";            
 
         }
 
-        mysqli_close($conn);
 
     }
 
@@ -84,8 +81,6 @@ class User
             return "Full name: " . $row['first_name'] . " " . $row['last_name'] . "<br>";
         }
 
-        mysqli_close($conn);
-
     }
 
     //* Metoda care returneaza emailul utilizatorului
@@ -100,8 +95,6 @@ class User
         while($row = mysqli_fetch_assoc($res)) {
             return "Email: " . $row['email'] ."<br>";
         }
-
-        mysqli_close($conn);
 
     }
 
@@ -118,8 +111,6 @@ class User
             return "User ID: " . $row['id'] . "<br>";
         }
 
-        mysqli_close($conn);
-
     }
 
     // *Metoda care returneaza orice date de la utilizator folosind parametrii metodei
@@ -133,10 +124,7 @@ class User
 
         while($row = mysqli_fetch_assoc($res)) {
             return ucfirst($user) . "'s " . $data . ": " . $row[$data] . "<br>";
-        }
-
-        mysqli_close($conn);
-    
+        }    
 
     }
 
@@ -157,14 +145,11 @@ class User
             $diff = $today->diff($bday);
 
             if ($diff->y < 18) {
-                return false;
+                return false . "<br>";
             } else {
-                return true;
+                return true . "<br>";
             }
         }
-
-        mysqli_close($conn);
-
         
     }
 
@@ -183,12 +168,10 @@ class User
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
 
-        mysqli_close($conn);
-
     }
 
     //* Metoda care editeaza un utilizator existent 
-    public function update_user($user, $data, $value) {
+    public static function update_user($user, $data, $value) {
 
         $sql = "UPDATE users SET " . $data . "='" . $value . "' WHERE first_name='" . $user ."'";
 
@@ -204,7 +187,7 @@ class User
     }
 
     //* Metoda care schimba starea unui utilizator existent
-    public function update_status($user, $status){
+    public static function update_status($user, $status){
 
         $sql = "UPDATE users SET status='". $status ."' WHERE first_name='". $user ."'";
 
@@ -217,12 +200,34 @@ class User
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
 
-        mysqli_close($conn);
-
     }
 
 }
 
 
+
 $user = new User("Tony", "Stark", "ironman@marvel.com", "manofmetal23", "1976-05-24", "4");
 
+$user->add_user("Tonyca", "Stark", "ironman@marvel.com", "manofmetal23", "1976-05-24", "4");
+
+$data = User::get_allData("tony");
+echo $data;
+
+$data = User::get_fullName("tony");
+echo $data;
+
+$data = User::get_email("tony");
+echo $data;
+
+$data = User::get_userId("tony");
+echo $data;
+
+$data = User::get_data("tony", "birthday");
+echo $data;
+
+$data = User::is_adult("tony");
+echo $data;
+
+User::update_user("tony", "email", "newEmail@email.com");
+
+User::update_status("tony", "2");
