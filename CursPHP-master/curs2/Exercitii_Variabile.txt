@@ -1,0 +1,145 @@
+Raspundeti la urmatoarele intrebari, apoi pentru verificare scrieti codul la fiecare intrebare.
+
+I Variabile
+1. Care din urmatoarele expresii este corecta?
+a)   echo "Afiseaza o fraza"
+b)   echo "Acesta este un link <a href="index.html">PHP</a>";
+c)   echo 'Teste PHP';
+d)   echo 'It's PHP test';
+ a)       b)       c)       d)
+2. Care din urmatoarele variabile "$var" este de tip Integer?
+a)   $var = "1978";
+b)   $var = 17.8;
+c)   $var = NULL;
+d)   $var = 1976;
+ a)       b)       c)       d)
+3. Care din urmatoarele variabile "$var" este de tip Float?
+a)   $var = '1234';
+b)   $var = 10.15;
+c)   $var = "12 float";
+d)   $var = 2000;
+ a)       b)       c)       d)
+4. Care din urmatoarele variabile "$var" este o matrice?
+a)   $var = array("PHP", "MySQL");
+b)   $var = $matrice;
+c)   $var = 'Array';
+d)   $var = NULL;
+ a)       b)       c)       d)
+5. Care din urmatoarele variabile globale este folosita pentru preluarea datelor din formulare?
+a)   $_COOKIE
+b)   $_POST
+c)   $_SESSION
+d)   $var
+ a)       b)       c)       d)
+6. Care din urmatoarele instructiuni returneaza adresa IP a utilizatorului?
+a)   $_SERVER['SERVER_NAME']
+b)   $_SERVER['HTTP_REFERER']
+c)   $_SERVER['REQUEST_URI']
+d)   $_SERVER['REMOTE_ADDR']
+ a)       b)       c)       d)
+7. Care este valoarea variabilei $c ?
+$a = 2.5;
+$b = 5;
+$c = (int)$a + $b;
+ a + b       7.5       7       8
+8. Care este valoarea variabilei $a ?
+$a = "a";
+$a .= "b";
+$a .= "c";
+ a       c       abc       ac
+9. Care este valoarea variabilei $c ?
+$a = 5;
+$b = 'doi';
+$c = $a - $b;
+ 5       5 - doi       3       doi
+10. Care este valoarea lui $a[2] ?
+$a[] = 'a';
+$a[] = 'b';
+$a[] = 'c';
+ NULL       a       b       c
+11. Care este valoarea lui $a ?
+$a = 7;
+$a++;
+ 7       8       6       9
+12. Care este valoarea lui $b ?
+$a = 'Exercitii PHP';
+$b = $a{3};
+ r       PHP       e       Exercitii PHP
+ 
+13. Ce v-a afisa urmatorul code PHP?
+<?php
+$x = 4;
+$y = 3;
+$z = 1;
+echo "$x = $x + $y + $z";
+?>
+a) 4 = 4 + 3 + 1
+b) 8
+c) 8 = 4 + 3 +1
+d) Error
+
+14. Ce v-a afisa urmatorul code PHP?
+<?php
+$x = 4;
+$y = 3
+$z = 1;
+$z = $z + $x + $y;
+echo "$z";
+?>
+a) $z
+b) 15
+c) 8
+d) 1
+
+15. Ce v-a afisa urmatorul code PHP?
+<?php
+$x = 5;
+$y = 10;
+$z = "$x + $y";
+echo "$z";
+?>
+a) 15
+b) 10 + 5
+c) $z
+d) $x + $y
+
+16. Ce v-a afisa urmatorul code PHP?
+<?php
+$phpvar1 = "a";
+$$phpvar1 = "b";
+echo "$phpvar1 $a";
+?>
+
+17. Ce v-a afisa urmatorul code PHP?
+<?php
+$web="mull";
+$mull="PHP";
+echo $$web;
+?>
+
+18. Ce v-a afisa urmatorul code PHP?
+<?php
+$web="mull";
+$mull="PHP";
+echo $$$web;
+?>
+19. Ce v-a afisa urmatorul code PHP?
+<?php
+$myVar = "Salut, sunt myVar";
+$anotherVar =& $myVar;
+$anotherVar = "Salut, eu sunt anotherVar!";
+echo $myVar; 
+echo $anotherVar;
+?>
+
+20. Ce v-a afisa urmatorul code PHP?
+<?php
+$a = "Am luat nota 10!";
+$b = &$a;
+$c = $b;
+$b = "Am luat nota 5!";
+
+echo $a;
+echo $b;
+echo $c;
+?>

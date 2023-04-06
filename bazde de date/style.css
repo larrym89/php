@@ -1,0 +1,20 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+fieldset {
+    width: 7em;
+}
+label {
+    display: flex;
+    
+}
+input{
+    margin-left: 20px;
+}
+strong {
+    width: 3.5em;
+    text-align: left;
+}
+legend {
+    margin-bottom: 1em;
+}

@@ -1,0 +1,203 @@
+Raspundeti la urmatoarele intrebari, apoi pentru verificare scrieti codul la fiecare intrebare.
+Argumentati raspunsul.
+
+III Operatori
+
+1. Ce va afisa urmatorul code PHP?
+<?php
+echo(12) + print(12);
+?>
+
+2. Ce va afisa urmatorul code PHP?
+<?php
+echo 12 + echo(12);
+?>
+
+3. Ce va afisa urmatorul code PHP?
+<?php
+echo 5+5 * 7-2
+?>
+
+4. Ce va afisa urmatorul code PHP?
+<?php
+$php_var = 3 / 4;
+echo $php_var;
+?>
+
+5. Ce va afisa urmatorul code PHP?
+<?php
+$php_var = 3 % 4 + 4 % 4 + 5 % 4;
+echo $php_var;
+?>
+
+6. Ce va afisa urmatorul code PHP?
+<?php
+$x = "La ";
+$y = "multi ";
+$z = "ani! "; 
+$q = $x.$y.$z;
+$x .= $y .= $z ;
+
+echo $x;
+echo $q
+?>
+
+7. Ce va afisa urmatorul code PHP?
+<?php
+$y = 2;
+$w = 4;
+$y *= $w /= $y;
+echo $y, $w;
+?>
+
+8. Ce va afisa urmatorul code PHP?
+<?php
+echo 456 !== 0456;
+?>
+9. Ce va afisa urmatorul code PHP?
+<?php
+$x = 0;
+$y = 1;
+$z = false;
+
+var_dump($x==$z && $x == $y);
+?>
+
+10. Ce va afisa urmatorul code PHP?
+<?php
+$x = 0;
+$y = 1;
+$z = false;
+
+var_dump($x==$z && $x == $y && $q = 100);
+echo $q;
+?>
+
+11. Ce va afisa urmatorul code PHP?
+<?php
+$x = 0;
+$y = 1;
+$z = false;
+
+var_dump($x==$z & $x == $y & $q = 100);
+echo $q;
+?>
+
+12. Ce va afisa urmatorul code PHP?
+<?php
+print 5 << 6;
+?>
+
+13. Ce va afisa urmatorul code PHP?
+<?php
+print 5 >> 6;
+?>
+
+14. Ce va afisa urmatorul code PHP?
+<?php
+$rezultat =  0b10 + 010 + 10 + 0x10;
+echo "$rezultat";
+?>
+
+15. Ce va afisa urmatorul code PHP?
+<?php
+echo( "PHP" <=> "PYTON");echo("<br>");
+echo( "PHP" <=> "JAVA");echo("<br>");
+echo( "PHP" <=> "PHP");echo("<br>");
+?>
+
+16. Ce va afisa urmatorul code PHP?
+<?php
+$a = 10;
+echo ++$a;
+echo $a++;
+echo $a;
+echo ++$a;
+?>
+
+
+17. Ce va afisa urmatorul code PHP?
+<?php
+$a = 12;
+--$a;
+echo $a++;
+?>
+
+18. Ce va afisa urmatorul code PHP?
+<?php
+$y = 2;
+**$y;
+echo $y;
+?>
+
+19. Ce va afisa urmatorul code PHP?
+<?php
+$php_var = 10===10 ? '2' : '4';
+echo $php_var;
+?>
+
+20. Ce va afisa urmatorul code PHP?
+<?php
+$x = 9;
+$y = 10;
+echo $x ^ $y;
+?>
+
+21. Ce va afisa urmatorul code PHP?
+<?php
+$user= 'admin';   
+$username = '$user' ?? 'not access';
+print($username);
+print("<br/>");
+
+$username2 = isset($user) ? $user : 'not access';
+print($username2);
+?>
+22.Ce va afisa urmatorul code PHP?
+$x = true;
+$y = false;
+
+$z = $x and $y;
+$w = $x && $y;
+
+var_dump($z);
+var_dump($w);
+
+// atentie la prioritate: = are prioritate mai mare decat and
+
+23. Ce va afisa urmatorul code PHP?
+$a = [
+    1, 
+    2,
+    'one' => 'a1',
+    'two' => 'a2'
+];
+
+$b = [
+    2, 
+    3,
+    'two' => 'b2',
+    'three' => 'b3'
+];
+
+var_dump($a + $b);
+//array_merge($a, $b);
+//array_replace($a, $b); 
+
+24. Ce va afisa urmatorul code PHP?
+var_dump(123 == "123abc");
+
+25. Ce va afisa urmatorul code PHP?
+$a = 1;//0001 in baza 2
+$b = 3;//0011 in baza 2
+echo $a & $b;
+echo '<br>';
+echo $a | $b;
+echo '<br>';
+echo $a ^ $b;
+
+26. Ce va afisa urmatorul code PHP?
+$a = false || true; // true
+$b = false or true; // false!
+
+echo $a,$b;

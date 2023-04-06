@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    font-family: sans-serif;
+    color: #f2f2f2;
+}
+
+.header {
+    background-color: #fff;
+    color: #333;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header p {
+    font-size: 2.5em;
+}
+
+.header p::first-letter {
+    color: red;
+    font-weight: 600;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    background: #333;
+    color: #fff;
+    padding: 5px;
+}
+
+.links {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.logo-img {
+    width: 100px;
+    padding: 10px;
+}
+
+a {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 1.4em;
+}
+
+.central {
+    padding: 80px 0;
+}
+
+.central .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main {
+    flex-basis: 840px;
+}
+
+.sidebar {
+    flex-basis: 300px;
+}
+
+.info-text {
+    font-size: 1.1em;
+
+}
+
+.footer{
+    background-color: #333;
+    text-align: center;
+    color: #ccc;
+    padding: 5px;
+}
+
+
+.table {
+    margin: auto;
+    width: 1000px;
+    padding: 20px;
+}
+
+table, th, td {
+    border: 1px solid;
+}
+
+td {
+    text-align: center;
+    padding: 10px;
+}
+
+.info-photo {
+    width: 200px;
+}
+
+.text-desc {
+    width: 600px;
+}
+
+.name {
+    width: 150px;
+    font-size: 1.5em;
+    font-weight: bold;
+}

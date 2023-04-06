@@ -1,0 +1,73 @@
+Raspundeti la urmatoarele intrebari, apoi pentru verificare scrieti codul la fiecare intrebare.
+
+II Constante
+
+1. Ce v-a afisa urmatorul code PHP aflat in fisierul test.php?
+<?php
+echo "Salut";
+echo __LINE__;
+echo __FILE__;
+?>
+
+2. Ce v-a afisa urmatorul code PHP?
+<?php
+define("nota","10");
+$nota=nota-5;
+echo nota;
+?>
+
+3. Ce v-a afisa urmatorul code PHP?
+<?php
+define("NOTA","10");
+$nota=NOTA-5;
+echo $nota;
+?>
+
+4. Ce v-a afisa urmatorul code PHP?
+<?php
+define("NOTA","10");
+NOTA=NOTA-5;
+echo NOTA;
+?>
+
+5. Ce v-a afisa urmatorul code PHP?
+<?php
+define("NOTA","10", true);
+echo NOTA;
+echo "<br>";
+echo NoTA;
+?>
+
+6. Ce v-a afisa urmatorul code PHP?
+<?php
+define("NOTA","10");
+echo NOTA;
+echo "<br>";
+echo NoTA;
+?>
+
+7. Ce v-a afisa urmatorul code PHP?
+<?php
+define("VITEZALUMINII","299792458 m/s");
+echo $VITEZALUMINII;
+?>
+
+8. Ce v-a afisa urmatorul code PHP?
+<?php
+define("__LINE__", "PHP este un limbaj de programare");
+echo __LINE__;
+?>
+
+9. Ce v-a afisa urmatorul code PHP?
+<?php
+define("IF", "Daca am timp invat PHP.");
+echo IF;
+?>
+
+10. Ce v-a afisa urmatorul code PHP?
+<?php
+define("VAR_NUME","test"); 
+${VAR_NUME} = "valoare"; 
+echo VAR_NUME;
+echo ${VAR_NUME}; 
+?>

@@ -1,0 +1,45 @@
+<?php
+ 
+class Connection{
+	
+	private $connection;
+	private static $instance = null;
+ 
+	
+	private $host;
+    private $user;
+    private $password;
+    private $database;
+	private $port;
+ 
+	private function __construct($host, $user, $password, $database, $port)
+	{
+		$this->connection = mysqli_connect
+			($this->host = $host,
+		 	$this->$user = $user,
+			$this->$password = $password,
+			$this->database = $database,
+			$this->port = $port);
+		if(mysqli_connect_error()){
+			die("Database Connection Failed" . mysqli_connect_error() . mysqli_connect_errno());
+		}
+	}
+	public static function getInstance()
+	{
+	  if(!self::$instance)
+	  {
+		self::$instance = new Connection("localhost", "root", "", "users", "3306");
+	  }
+	 
+	  return self::$instance;
+	}
+	
+	public function getConnection()
+	{
+		return $this->connection;
+	}
+
+}
+
+
+?>

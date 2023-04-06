@@ -1,0 +1,11 @@
+CREATE TABLE `mysite21`.`masini` (
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `nume` VARCHAR(50) NOT NULL,
+    `model` VARCHAR(50) NOT NULL,
+    `pret` DECIMAL(10, 2) NOT NULL,
+    `an` YEAR NOT NULL,
+    `culoare` VARCHAR(50) NOT NULL,
+    `poza` VARCHAR(50) NOT NULL,
+    `dataAdaugare` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB;
