@@ -52,10 +52,10 @@ class Posts {
     /**
      * Get the value of image
      */
-    public function getImage()
-    {
-        return $this->image;
-    }
+    // public function getImage()
+    // {
+    //     return $this->image;
+    // }
 
     /**
      * Set the value of image
@@ -67,10 +67,16 @@ class Posts {
     //     return $this;
     // }
 
-    public function read()
+    public function read($id=null)
     {
 
         $sql = "SELECT * FROM " . self::TABLENAME ;
+        if($id){
+            $sql .= " WHERE id=$id";
+       }
+       else{
+            $sql .= " ORDER BY id DESC";
+       }
         $db = Database::getInstance()->getConnection();
         $res = mysqli_query($db, $sql);
         return $res;

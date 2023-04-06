@@ -5,7 +5,7 @@
         <h2 class="card-title h4"><?php echo ucfirst($row['posts_title']) ?></h2>
         <p class="card-text"><?php echo ucfirst($row['posts_content']); ?></p>
 
-        <a class="btn btn-primary" href="#!">Read more →</a>
+        <a class="btn btn-primary" href="article.php?id=<?php echo $row['id']; ?>">Read more →</a>
     </div>
 </div>
 
