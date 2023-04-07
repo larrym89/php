@@ -5,6 +5,6 @@ if (!isset($_SESSION)) {
 require_once 'autoload.php';
 $utilizatori = new User();
 $utilizatori->logout();
-User::redirect('index.php');
+User::redirect('login.php');
 die();
 ?>

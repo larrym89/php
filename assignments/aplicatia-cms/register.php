@@ -1,4 +1,6 @@
 <?php
+require('autoload.php');
+include('includes/functions.php');
 include("includes/header.php");
 ?>
 
@@ -13,7 +15,7 @@ include("includes/header.php");
 
                     
 
-                    <form action="signup.php" method="post">
+                    <form action="post_register.php" method="post">
                         
                         <?php if(isset($_GET['error'])){ ?>
                             <div class="alert alert-danger" role="alert">

@@ -4,28 +4,13 @@ class Comments {
 
     const TABLENAME = 'comments';
 
-    public $id;
+    public $user_id;
+    public $post_id;
     public $content;
 
 
 
 
-    /**
-     * Get the value of id
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set the value of id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-
-    }
 
     /**
      * Get the value of content
@@ -41,6 +26,38 @@ class Comments {
     public function setContent($content)
     {
         $this->content = $content;
+    }
+
+        /**
+     * Get the value of user_id
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * Set the value of user_id
+     */
+    public function setUserId($user_id)
+    {
+        $this->user_id = $user_id;
+    }
+
+    /**
+     * Get the value of post_id
+     */
+    public function getPostId()
+    {
+        return $this->post_id;
+    }
+
+    /**
+     * Set the value of post_id
+     */
+    public function setPostId($post_id)
+    {
+        $this->post_id = $post_id;
     }
 
     public function read($id=null)
@@ -61,7 +78,7 @@ class Comments {
 
     public function create() {
 
-        $sql = "INSERT INTO ". self::TABLENAME. " (content) VALUES '$this->content'";
+        $sql = "INSERT INTO comments (content, user_id, post_id)  VALUES ('$this->content', '$this->user_id', '$this->post_id')";
         $db = Database::getInstance()->getConnection();
         $res = mysqli_query($db, $sql);
         if($res){
@@ -73,7 +90,7 @@ class Comments {
 
     public function update($id) {
 
-        $sql = "UPDATE ". self::TABLENAME. " SET content SET content = '$this->content' WHERE id = '$id'";
+        $sql = "UPDATE ". self::TABLENAME. "content SET content = '$this->content' WHERE id = '$id'";
         $db = Database::getInstance()->getConnection();
         $res = mysqli_query($db, $sql);
         if($res){
@@ -83,4 +100,6 @@ class Comments {
        }
 
     }
+
+
 }

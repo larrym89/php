@@ -77,8 +77,8 @@ class USER
 
     public function logout()
     {
-        session_destroy();
         unset($_SESSION['user_session']);
+        session_destroy();
         return true;
     }
 

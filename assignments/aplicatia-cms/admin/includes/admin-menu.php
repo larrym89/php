@@ -3,7 +3,7 @@
 
     <div class="row">
         <!-- Categories widget-->
-        <div class="card mb-4">
+        <!-- <div class="card mb-4">
             <div class="card-header">Actions</div>
             <div class="card-body">
                 <div class="row">
@@ -16,7 +16,7 @@
 
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
     <div class="row">
         <!-- Categories widget-->

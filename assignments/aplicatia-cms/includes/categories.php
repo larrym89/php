@@ -1,4 +1,4 @@
-<div class="card mb-4">
+<div class="card mb-4 shadow">
     <div class="card-header">Categories</div>
     <div class="card-body">
         <div class="row">

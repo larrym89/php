@@ -24,17 +24,19 @@ if(isset($_POST['username']) &&
         exit;
     } else {
 
-        $user = new User();
+        $password = password_hash($password, PASSWORD_DEFAULT);
         $username = strip_tags($username);
         $email = strip_tags($email);
         $password = strip_tags($password);
-        $password = password_hash($password, PASSWORD_DEFAULT);
+
+
+        $user = new User();
 
         $register = $user->register($username, $email, $password);
 
         if ($register) {
             $success = "Registration successful.";
-            User::redirect("register.php?error=$success");
+            User::redirect("register.php?success=$success");
             exit;
         } else {
             $error = "Registration failed.";

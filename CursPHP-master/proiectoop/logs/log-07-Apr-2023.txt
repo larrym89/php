@@ -1,0 +1,4 @@
+[07-Apr-2023 15:54:24] [localhost/php-link/CursPHP-master/proiectoop/inregistrare.php] : [INFO] - Ip utilizator: ::1
+[07-Apr-2023 15:56:49] [localhost/php-link/CursPHP-master/proiectoop/inregistrare.php] : [INFO] - Ip utilizator: ::1
+[07-Apr-2023 15:57:06] [localhost/php-link/CursPHP-master/proiectoop/inregistrare.php] : [INFO] - Ip utilizator: ::1
+[07-Apr-2023 15:57:09] [localhost/php-link/CursPHP-master/proiectoop/inregistrare.php] : [INFO] - Ip utilizator: ::1
