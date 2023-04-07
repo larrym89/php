@@ -25,10 +25,16 @@ class Category
         $this->category = $category;
     }
 
-    public function read()
+    public function read($category=null)
     {
 
-        $sql = "SELECT * FROM " . self::TABLENAME . " ORDER BY category_name ASC";
+        $sql = "SELECT * FROM " . self::TABLENAME ;
+        if($category){
+            $sql .= " WHERE category_name='$category";
+       }
+       else{
+            $sql .= " ORDER BY category_name ASC";
+       }
         $db = Database::getInstance()->getConnection();
         $res = mysqli_query($db, $sql);
         return $res;

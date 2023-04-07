@@ -20,6 +20,7 @@
                         <div class="small text-muted"><?php echo format_timestamp($row['posts_created_at']) ?></div>
                         <h2 class="card-title h4"><?php echo ucfirst($row['posts_title']) ?></h2>
                         <p class="card-text"><?php echo ucfirst($row['posts_content']); ?></p>
+                        <?php endwhile; ?>
 
                         <!-- Comments -->
                         <?php
@@ -41,7 +42,6 @@
 
                     </div>
                 </div>
-            <?php endwhile; ?>
         </div>
 
 

@@ -70,12 +70,11 @@ class Posts {
     public function read($id=null)
     {
 
-        $sql = "SELECT * FROM " . self::TABLENAME ;
         if($id){
-            $sql .= " WHERE id=$id";
-       }
+            $sql = "SELECT * FROM " .self::TABLENAME . " WHERE id=$id";
+       }       
        else{
-            $sql .= " ORDER BY id DESC";
+            $sql = "SELECT * FROM ". self::TABLENAME ." ORDER BY id DESC";
        }
         $db = Database::getInstance()->getConnection();
         $res = mysqli_query($db, $sql);
@@ -84,6 +83,14 @@ class Posts {
     }
 
 
+    public function showCategory() 
+    {
+        
+        $sql = "SELECT * FROM `posts` WHERE `posts_category_name` = '".$_GET['category']."' ORDER BY `id` DESC";
+        $db = Database::getInstance()->getConnection();
+        $res = mysqli_query($db, $sql);
+        return $res;
 
+    }
 
 }

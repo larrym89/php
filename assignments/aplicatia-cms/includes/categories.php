@@ -9,7 +9,7 @@
                     $res = $category->read();
                     while ($row = mysqli_fetch_assoc($res)) : ?>
 
-                        <li><a href="news?category=<?php echo $row['category_name'] ?>" class="text-decoration-none"><?php echo ucfirst($row['category_name']) ?></a></li>
+                        <li><a href="index.php?category=<?php echo $row['category_name'] ?>" class="text-decoration-none"><?php echo ucfirst($row['category_name']) ?></a></li>
                     <?php endwhile; ?>
                 </ul>
             </div>
