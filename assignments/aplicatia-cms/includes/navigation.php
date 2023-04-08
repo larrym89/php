@@ -16,14 +16,7 @@
         </li>
     <?php endif; ?>
 
-    <?php if (isset($_SESSION['user_session']) && !empty($_SESSION['user_session'])) : ?>
-
-        <?php if (isset($_SESSION['username']) && !empty($_SESSION['username']) && $_SESSION['username'] == 'admin') : ?>
-            <li class="nav-item ">
-                <a class="nav-link" href="admin/index.php">Admin-Panel</a>
-            </li>
-        <?php endif; ?>
-
+    <?php if (isset($_SESSION['user_session']) && !empty($_SESSION['user_session'])) : ?>       
         <li class="nav-item ">
             <a class="nav-link" href="logout.php">Logout</a>
         </li>

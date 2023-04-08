@@ -1,6 +1,6 @@
-<?php 
+<?php
 require('autoload.php');
-include('includes/functions.php'); 
+include('includes/functions.php');
 
 if (!isset($_SESSION)) {
     session_start();
@@ -20,16 +20,16 @@ include('includes/header.php');
         <!-- Blog entries-->
         <div class="col-lg-10">
             <!-- Featured blog post-->
-            
+
             <!-- Nested row for non-featured blog posts-->
             <div class="row">
                 <?php
                 $post = new Posts();
-                if(isset($_GET['category'])) {
+                if (isset($_GET['category'])) {
                     $category = $_GET['category'];
                     $res = $post->showCategory();
                 } else {
-                $res = $post->read();
+                    $res = $post->read();
                 }
                 while ($row = mysqli_fetch_assoc($res)) : ?>
                     <div class="col-lg-6">
@@ -37,18 +37,24 @@ include('includes/header.php');
                         <?php include("includes/news-post.php"); ?>
                     </div>
                 <?php endwhile; ?>
-                
+
 
             </div>
 
         </div>
 
-        <!-- Side widgets-->
 
         <div class="col-lg-2">
 
             <!-- Categories widget-->
             <?php include "includes/categories.php"; ?>
+            <?php if (isset($_SESSION['user_session']) && !empty($_SESSION['user_session'])) : ?>
+                <?php if (isset($_SESSION['username']) && !empty($_SESSION['username']) && $_SESSION['username'] == 'admin') : ?>
+
+                    <?php include "includes/side-widget.php"; ?>
+
+                <?php endif; ?>
+            <?php endif; ?>
 
         </div>
     </div>
