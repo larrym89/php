@@ -1,5 +1,15 @@
 <?php
 require('autoload.php');
+
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+
+if (User::is_loggedin() !== true) {
+    User::redirect('login.php');
+}
+
 include("includes/header.php");
 
 ?>

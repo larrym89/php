@@ -15,7 +15,7 @@
                     <?php if (isset($_SESSION['username']) && !empty($_SESSION['username']) && $_SESSION['username'] == 'admin') : ?>
 
                         <!-- <a class="btn btn-warning" href="#!">Edit</a> -->
-                        <a class="btn btn-danger" href="#!">Delete</a>
+                        <a class="btn btn-danger" href="delete-news.php?id=<?php echo $row['id']; ?>">Delete</a>
 
                     <?php endif; ?>
 

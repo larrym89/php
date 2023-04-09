@@ -5,8 +5,8 @@
             <div class="col-sm-12">
                 <ul class="list-unstyled mb-0">
                    
-                            <li><a href="" class="text-decoration-none">Add news</a></li>
-                            <li><a href="" class="text-decoration-none">Add category</a></li>
+                            <li><a href="add-news.php" class="text-decoration-none">Add news</a></li>
+                            <li><a href="add-category.php" class="text-decoration-none">Add category</a></li>
                      
                 </ul>
             </div>

@@ -7,7 +7,7 @@ class Posts {
     public $id;
     public $title;
     public $content;
-    private $categoryId;
+    private $category;
 
 
     public function read($id=null)
@@ -39,7 +39,7 @@ class Posts {
     public function create()
     {
 
-        $sql = "INSERT INTO ". self::TABLENAME. " (title, content, category_id) VALUES (title, content, categoryId)";
+        $sql = "INSERT INTO ". self::TABLENAME. " (posts_title, posts_content, posts_category_name) VALUES ('$this->title', '$this->content', '$this->category')";
         $db = Database::getInstance()->getConnection();
         $res = mysqli_query($db, $sql);
         if($res){
@@ -100,16 +100,16 @@ class Posts {
     /**
      * Get the value of categoryId
      */
-    public function getCategoryId()
+    public function getCategory()
     {
-        return $this->categoryId;
+        return $this->category;
     }
 
     /**
      * Set the value of categoryId
      */
-    public function setCategoryId($categoryId)
+    public function setCategory($category)
     {
-        $this->categoryId = $categoryId;
+        $this->category = $category;
     }
 }

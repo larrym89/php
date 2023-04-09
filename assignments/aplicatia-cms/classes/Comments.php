@@ -82,15 +82,16 @@ class Comments {
         $db = Database::getInstance()->getConnection();
         $res = mysqli_query($db, $sql);
         if($res){
+
             return true;
        }else{
            return false;
        }
     }
 
-    public function update($id) {
+    public function update($post_id, $content) {
 
-        $sql = "UPDATE ". self::TABLENAME. "content SET content = '$this->content' WHERE id = '$id'";
+        $sql = "UPDATE comments SET content = '$content' WHERE id='$post_id'";
         $db = Database::getInstance()->getConnection();
         $res = mysqli_query($db, $sql);
         if($res){
@@ -99,6 +100,17 @@ class Comments {
            return false;
        }
 
+    }
+
+    public function delete($post_id) {
+        $sql = "DELETE FROM comments WHERE id = '$post_id'";
+        $db = Database::getInstance()->getConnection();
+        $res = mysqli_query($db, $sql);
+        if($res){
+            return true;
+       }else{
+        return false;
+       }
     }
 
 

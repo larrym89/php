@@ -17,7 +17,7 @@ include('includes/header.php');
 <div class="container">
     <div class="row mt-4">
         <!-- Blog entries-->
-        <div class="col-lg-8">
+        <div class="col-lg-10">
 
             <?php
             $post = new Posts();
@@ -46,9 +46,11 @@ include('includes/header.php');
                                     <div><?php echo $row['content']; ?></div>
 
                                     <?php if ($_SESSION['username'] == 'admin' || $_SESSION['user_session'] == $row['user_id']) : ?>
-                                            <div><a href="edit_comments.php?id=<?php echo $_GET['id']; ?>">Edit</a></div>
+                                            <div><a href="edit_comments.php?comment_id=<?php echo $row['id']; ?>">Edit</a>
+                                            <a href="delete-comments.php?comment_id=<?php echo $row['id']; ?>">Delete</a>
+                                        </div>
                                     
-
+                                            
                                     <?php endif; ?>
 
                                 </div>
@@ -70,7 +72,7 @@ include('includes/header.php');
 
 
         <!-- Side widgets-->
-        <div class="col-lg-4">
+        <div class="col-lg-2">
 
             <!-- Categories widget-->
             <?php include "includes/categories.php"; ?>
