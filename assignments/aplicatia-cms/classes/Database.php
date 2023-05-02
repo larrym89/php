@@ -30,7 +30,7 @@ class Database{
 	{
 	  if(!self::$instance)
 	  {
-		self::$instance = new Database("localhost", "root", "", "aplicatia-cms", "3306");
+		self::$instance = new Database("localhost", "root", "", "aplicatia-cms", "3307");
 	  }
 	 
 	  return self::$instance;
