@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Functia definita de utilizator</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+    function ariaPatrat(lungime1, lungime2, lungime3) {
+        
+        if (!lungime1 && !lungime2 && !lungime3){
+            document.write("Nu s-a introdus niciun parametru")
+        }
+        
+        rezultat = []
+
+        if (lungime1) rezultat.push(lungime1 ** 2)
+        if (lungime2) rezultat.push(lungime2 ** 2)
+        if (lungime3) rezultat.push(lungime3 ** 2)
+
+        return rezultat
+    }
+
+    document.write(ariaPatrat() , '<br>')
+    document.write(ariaPatrat(2), '<br>')
+    document.write(ariaPatrat(2, 3), '<br>')
+    document.write(ariaPatrat(2, 3, 4), '<br>')
+    
+
+</script>
+
+</html>
