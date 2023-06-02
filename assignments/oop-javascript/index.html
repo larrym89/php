@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        var Cub = function (latura) {
+
+            if (typeof latura !== 'number' || latura <= 0 ) {
+
+                throw new Error("Latura trebuie sa fie un numar intreg mai mare ca 0");
+
+            }
+
+            this._latura = latura;
+
+
+            this.getVolum = function () {
+
+                return this._latura ** 3;
+
+            }
+
+
+            this.getLungimeLaturi = function () {
+
+                return this._latura * 12;
+
+            }
+
+        }
+
+        var cub1 = new Cub(10);
+
+        volum = cub1.getVolum();
+        console.log(volum);
+
+        lungimeLaturi = cub1.getLungimeLaturi();
+        console.log(lungimeLaturi);
+
+
+        // Aceasta instantiere arunca o eroare 
+        var cub2 = new Cub(-5);
+
+        volum2 = cub2.getVolum();
+        console.log(volum2);
+
+        lungimeLaturi2 = cub2.getLungimeLaturi();
+        console.log(lungimeLaturi2);
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <style>
+          div {
+            width: 200px;
+            height: 50px;
+            background-color: blue;
+            text-align: center;
+            /* position: absolute; */
+          }
+          div > p {
+            color:aliceblue;
+            position: relative;
+            top: 60px;
+          }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <p>TEXT 111</p>
+    </div>
+
+    <script>
+
+        $("div").mouseenter(function(){
+            $(this).animate({"height" : 300}, 1000);
+        })
+        $("div").mouseleave(function(){
+            $(this).animate({"height" : 50}, 1000);
+        })
+        
+    </script>
+
+</body>
+
+</html>

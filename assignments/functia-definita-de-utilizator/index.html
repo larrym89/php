@@ -11,26 +11,43 @@
 
 <script>
 
-    function ariaPatrat(lungime1, lungime2, lungime3) {
-        
-        if (!lungime1 && !lungime2 && !lungime3){
-            document.write("Nu s-a introdus niciun parametru")
+
+    function calculeazaAria(latura, nrZecimale, nrSpatii) {
+
+        if (nrZecimale === undefined) nrZecimale = 2
+        if (nrSpatii === undefined) nrSpatii = 0
+
+        var spatiu = ""
+
+
+        if (isNaN(latura) || isNaN(nrZecimale) || isNaN(nrSpatii)) {
+            return "Date incorecte"
         }
-        
-        rezultat = []
 
-        if (lungime1) rezultat.push(lungime1 ** 2)
-        if (lungime2) rezultat.push(lungime2 ** 2)
-        if (lungime3) rezultat.push(lungime3 ** 2)
+        if (latura < 0 || nrZecimale < 0 || nrSpatii < 0) {
+            return "Introduceti valori pozitive"
+        }
 
-        return rezultat
+        var ariaPatrat = latura ** 2
+
+        if (!isNaN(nrZecimale)) {
+            ariaCuZecimale = ariaPatrat.toFixed(nrZecimale)
+        }
+
+        if (!isNaN(nrSpatii)) {
+            for (var i = 0; i < nrSpatii; i++) {
+                spatiu += " ";
+            }
+        }
+
+        rezultatFinal = spatiu + ariaCuZecimale
+
+        return rezultatFinal
+
     }
 
-    document.write(ariaPatrat() , '<br>')
-    document.write(ariaPatrat(2), '<br>')
-    document.write(ariaPatrat(2, 3), '<br>')
-    document.write(ariaPatrat(2, 3, 4), '<br>')
-    
+    const rezultat = calculeazaAria(2, 3, 5)
+    console.log(rezultat)
 
 </script>
 

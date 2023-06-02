@@ -1,0 +1,69 @@
+<!-- Creaţi o animaţie din cel puţin patru obiecte care se mişcă în acelaşi timp. Cu un clic pe primul obiect se modifică mărimea sa, în timp ce cu trecerea mouse-ulului peste suprafaţa celui de-al treilea obiect, se modifică culoarea. Utilizaţi doar biblioteca jQuery.
+
+Notă: Distribuiţi exerciţiul precum un fişier HTML zip, care include un cod JavaScript. Utilizaţi exclusiv o bibliotecă găzduită (CDN). -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Animatie jQuery</title>
+    <style>
+        .square {
+            width: 100px;
+            height: 100px;
+            background-color: magenta;
+            border-radius: 15px;
+            position: absolute;
+        }
+
+        #square1 {
+            top: 30px;
+        }
+
+        #square2 {
+            top: 150px;
+        }
+
+        #square3 {
+            top: 270px;
+        }
+
+        #square4 {
+            top: 390px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div class="square" id="square1"></div>
+    <div class="square" id="square2"></div>
+    <div class="square" id="square3"></div>
+    <div class="square" id="square4"></div>
+</body>
+
+<script>
+    $(document).ready(function () {
+
+
+
+        $("#square1").click(function () {
+            $(this).animate({ width: '150px', height: "110px" }, 1000)
+        })
+
+
+        $('#square3').mouseover(
+
+            function () {
+                $(this).css({ 'backgroundColor': 'olive' })
+            }
+        )
+
+
+        $('.square').animate({ left: 200 }, 2000)
+
+    })
+
+</script>
+
+</html>

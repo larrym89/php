@@ -1,0 +1,18 @@
+root {
+    width: 40%;
+    height: 100px;
+    margin: 0 auto;
+    border: 1px solid #696969;
+    padding: 10px;
+}
+
+country {
+    width: 100%;
+    font-size: large;
+    color: #CC5200;
+    margin-bottom: 5px;
+    float: left;
+    border: 1px solid #696969;
+    background-color: #66CCFF;
+
+}

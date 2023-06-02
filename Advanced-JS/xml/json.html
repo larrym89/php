@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        var jsonObj = '{"users":[' +
+            '{"first_name":"Robert", "last_name":"Smith"},' +
+            '{"first_name":"Richard", "last_name":"Miller"},' +
+            '{"first_name":"Thomas","last_name":"Anderson"}' +
+            ']}';
+
+        var jsObj = JSON.parse(jsonObj);
+        alert(jsObj['users'][1].first_name);
+
+
+    </script>
+
+</body>
+
+</html>

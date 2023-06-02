@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Evenimentul de pe lista de evenimente</title>
+</head>
+
+<body>
+    <select onchange="changeFunc(this)">
+        <option>Opel</option>
+        <option>Fiat</option>
+        <option>Mercedes</option>
+        <option>Volvo</option>
+    </select>
+
+    <p id="p_1"></p>
+
+</body>
+
+<script>
+
+    function changeFunc(car) {
+        var x = car.value;
+        var carDiv = document.getElementById('p_1')
+        carDiv.innerText = "Selection is: " + x;
+    }
+
+</script>
+
+</html>

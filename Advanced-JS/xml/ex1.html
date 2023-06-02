@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        function createDiv(id) {
+            
+            var dv = document.createElement('div');
+            dv.setAttribute('id', id);
+            dv.innerHTML = "<div id=\"" + id + "\">testDiv " + id + "</div>";
+
+            dv.onmouseover = function() {
+                this.style.cursor = 'pointer';
+                this.style.color = 'red';
+            }
+
+            dv.onmouseout = function() {
+                this.style.color = 'black';
+            }
+
+            document.body.appendChild(dv);
+
+        }
+
+        for (var i=0; i<20; i++) {
+            createDiv(i)
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        function xhttpFunction() {
+            var xhttp;
+            try {
+                xhttp = new XMLHttpRequest();
+            } catch (e) {
+                try {
+                    xhttp = new ActiveXObject("MSXML2.XMLHTTP");
+                }catch(e){
+                    try {
+                        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                    } catch (e) {
+                        alert("your browser broke!");
+                        return false;
+                    }
+                }
+            }
+            return xhttp;
+        }
+        var xhttp = xhttpFunction();
+        function getRes(){
+            xhttp.open("GET", "result.json", true);
+            xhttp.send(null);
+            xhttp.onreadystatechange = function(){
+                if(xhttp.readyState === 4){
+                    var res = xhttp.responseText;
+                    res = JSON.parse(res);
+                    domRend(res);
+                }
+            }
+        }
+        function domRend(r){
+            document.body.innerHTML = "";
+            for(var i in r){
+                var div = document.createElement('div');
+                var p = document.createTextNode(r[i]['team1'] + " / " + r[i]['team2'] + " - " + r[i]['result']);
+                div.appendChild(p);
+                document.body.appendChild(div);
+            }
+        }
+        setInterval(getRes, 2000)
+
+    </script>
+
+</body>
+
+</html>

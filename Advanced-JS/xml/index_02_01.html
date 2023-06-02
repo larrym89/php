@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        /*
+              var parent = {
+                val: 10,
+                getVal: function(){
+                    return this.val
+                }
+              }
+        
+              var child = Object.create(parent)
+              alert(child.getVal())
+              */
+
+        function Cuboid(a, b, c) {
+            this._a = a;
+            this._b = b;
+            this._c = c;
+
+            this.volume = function () {
+                return this._a * this._b * this._c;
+            }
+            this.surfaceArea = function () {
+                return 2 * (this._a * this._b + this._b * this._c + this._a * this._c);
+            }
+        }
+
+        var box = new Cuboid(30, 40, 50)
+        var dice = new Cuboid(2, 2, 2)
+
+        alert(box.volume())
+        alert(box.surfaceArea())
+        
+        alert(dice.volume())
+        alert(dice.surfaceArea())
+
+    </script>
+
+</body>
+
+</html>

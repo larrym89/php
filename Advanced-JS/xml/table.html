@@ -1,0 +1,60 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>XML</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="table-title">
+        <h3>Country Table</h3>
+    </div>
+    <table class="table-fill">
+        <thead>
+            <tr>
+                <th class="text-left">Country</th>
+                <th class="text-left">Capital</th>
+                <th class="text-left">Description</th>
+                <th class="text-left">Country code</th>
+            </tr>
+        </thead>
+        <tbody class="table-hover">
+            <script>
+
+                var xmlDom;
+                xmlDom = new XMLHttpRequest();
+                xmlDom.open("GET", "country.xml", false);
+                xmlDom.send(null);
+
+                /*
+                var x = xmlDom.responseXML;
+                var firstCountry = x.evaluate('/root/country/name[1]', x, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
+                console.log(firstCountry.singleNodeValue.textContent);
+                */
+
+                var xml = xmlDom.responseXML, name, capital, countryCode;
+                var countries = xml.getElementsByTagName("country");
+                for (i = 0; i < countries.length; i++) {
+                    cName = countries[i].getElementsByTagName("name")[0];
+                    capital = countries[i].getElementsByTagName("capital")[0];
+                    description = countries[i].getElementsByTagName("description")[0];
+
+                    document.write('<tr><td class="text-left">' +
+                        cName.firstChild.nodeValue +
+                        '</td><td>' +
+                        capital.firstChild.nodeValue +
+                        '</td><td>' +
+                        description.firstChild.nodeValue +
+                        '</td><td>' +
+                        countries[i].getAttribute("countryCode") +
+                        '</td></tr>'
+                    );
+                }
+
+            </script>
+        </tbody>
+    </table>
+</body>
+
+</html>

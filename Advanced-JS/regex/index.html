@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Regex</title>
+</head>
+
+<body>
+
+    <form onsubmit="return validateFunc()">
+        <input type="text" id="name" placeholder="Name"><br>
+        <input type="text" id="email" placeholder="Email"><br>
+        <input type="text" id="phone" placeholder="Phone"><br>
+        <input type="submit" value="Go">
+    </form>
+
+    <script>
+
+        function validateFunc() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+
+            var nameRegex = /^[a-z]+[ ]?[a-z]+$/i;
+            var emailRegex = /[a-z0-9]+@[a-z0-9]+\.[a-z]{2,4}$/i;
+            var phoneRegex = /^\d{10$/;
+
+            console.log(nameRegex.test(name));
+            console.log(emailRegex.test(email));
+            console.log(phoneRegex.test(phone));
+
+            return false;
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Cilindru</title>
+</head>
+
+<body>
+
+    <script>
+
+        var Cilinder = function(radius, height) {
+
+            this._radius = radius;
+            this._height = height;
+
+            const PI = 3.14159
+
+            this.volume = function(){
+                return PI * Math.pow(2, this._radius) * this._height
+            }
+
+            this.surfaceArea = function(){
+                return 2 * PI * Math.pow(2, this._radius) + 2 * PI * this._radius * this._height;
+            }
+
+        }
+
+        var cilinder1 = new Cilinder(5, 10)
+        alert(cilinder1.volume().toFixed(2));
+        alert(cilinder1.surfaceArea().toFixed(2));
+
+    </script>
+
+</body>
+
+</html>

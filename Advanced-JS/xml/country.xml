@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/css" href="countryStyle.css" ?>
+<root>
+
+    <country countryCode="en">
+        <name>United Kingdom</name>
+        <capital>London</capital>
+        <description>Descripition of United Kingdom</description>
+    </country>
+
+    <country countryCode="fr">
+        <name>France</name>
+        <capital>Paris</capital>
+        <description>Descripition of France</description>
+    </country>
+
+  
+</root>

@@ -1,0 +1,18 @@
+<html>
+
+<head>
+    <title>jQuery effects</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+    </script>
+</head>
+
+<body>
+    <div id="text"  style=" background:red;">Some text goes here</div>
+    <script type="text/javascript">
+        $("div").click(function(){
+        $(this).animate({"width" : 300}, 1500).animate({"height" : 500}, 2000);
+    });
+    </script>
+    </body>
+    </html>
