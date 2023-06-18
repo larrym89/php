@@ -14,11 +14,8 @@
 <body>
 
     <div id="container">
-        
-       <button v-on:click="">Click</button>
-
-       <p>{{code}}</p>
-
+      
+        <my-component name="ion"></my-component>
 
     </div>
 
@@ -27,16 +24,19 @@
 
 <script>
 
-    var user = {
-        name: "john doe",
-        age: undefined
-    };
+    Vue.component('my-component' , {
+        props: ['name'],
+        template : '<div v-on:click="counter++">Hello {{name}}</div>',
+        data: function(){
+            return {
+                counter: 0
+            }
+        }
+    })
+
 
     var vm = new Vue({
-        el: '#container',
-        data: {
-            code: 0
-        }
+        el: '#container'  
     });
 
 </script>
